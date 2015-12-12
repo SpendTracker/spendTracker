@@ -7,7 +7,9 @@
 
 
 class Command {
-
+    public:
+        Command();
+        virtual ~Command();
 };
 
 
