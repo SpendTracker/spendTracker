@@ -67,3 +67,7 @@ void Account::expense(const std::map<Account::Category, int>& expense) {
 void Account::date(const std::string& date) {
     date_ = date;
 }
+
+void Account::toJson() {
+
+}
