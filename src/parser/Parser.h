@@ -5,12 +5,10 @@
 #ifndef SPENDTRACKER_PARSER_H
 #define SPENDTRACKER_PARSER_H
 
-
 class Parser {
     public:
         Parser();
         virtual ~Parser();
 };
-
 
 #endif //SPENDTRACKER_PARSER_H
