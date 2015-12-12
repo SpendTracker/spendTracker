@@ -32,6 +32,8 @@ public:
     void expense(const std::map<Account::Category, int>& expense);
     void date(const std::string& date);
 
+    void toJson();
+
 private:
     int id_;
     int balance_;
