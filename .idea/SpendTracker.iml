@@ -3,7 +3,15 @@
   <component name="NewModuleRootManager">
     <content url="file://$MODULE_DIR$">
       <sourceFolder url="file://$MODULE_DIR$/CMakeLists.txt" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/main.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/gui/GUI.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/logic/Logic.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/logic/Logic.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/parser/command/Command.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/parser/command/Command.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/parser/Parser.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/parser/Parser.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/storage/Storage.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/storage/Storage.h" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
