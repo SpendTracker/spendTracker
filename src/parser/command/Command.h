@@ -7,6 +7,8 @@
 
 
 class Command {
+    private:
+        string type;
     public:
         Command();
         virtual ~Command();
