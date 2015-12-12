@@ -10,8 +10,14 @@
       <sourceFolder url="file://$MODULE_DIR$/parser/command/Command.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/parser/Parser.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/parser/Parser.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/storage/account/Account.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/storage/account/Account.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/storage/Storage.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/storage/Storage.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/storage/StorageLoad.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/storage/StorageLoad.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/storage/StorageSave.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/storage/StorageSave.h" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
