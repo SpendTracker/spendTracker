@@ -11,10 +11,10 @@
     </ADDITIONAL_GENERATION_ENVIRONMENT>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e951ed38-bb99-4982-ba4f-58e80cc725a8" name="Default" comment="Added component files">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/storage/StorageSave.cpp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/storage/StorageSave.h" />
+    <list default="true" id="e951ed38-bb99-4982-ba4f-58e80cc725a8" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/storage/Storage.cpp" afterPath="$PROJECT_DIR$/storage/Storage.cpp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/storage/Storage.h" afterPath="$PROJECT_DIR$/storage/Storage.h" />
     </list>
     <ignored path="SpendTracker.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -45,11 +45,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Storage.cpp" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Storage.cpp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/storage/Storage.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.3515625">
+              <caret line="9" column="1" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
               <folding />
             </state>
           </provider>
@@ -59,8 +59,10 @@
         <entry file="file://$PROJECT_DIR$/storage/Storage.h">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
+              <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+              <folding>
+                <element signature="e#42#59#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -124,10 +126,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="StorageLoad.h" pinned="false" current-in-tab="true">
+      <file leaf-file-name="StorageLoad.h" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/storage/StorageLoad.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.46875">
+            <state vertical-scroll-proportion="0.0">
               <caret line="12" column="19" selection-start-line="12" selection-start-column="19" selection-end-line="12" selection-end-column="19" />
               <folding>
                 <element signature="e#42#60#0" expanded="true" />
@@ -166,6 +168,8 @@
         <option value="$PROJECT_DIR$/storage/StorageLoad.cpp" />
         <option value="$PROJECT_DIR$/storage/StorageSave.cpp" />
         <option value="$PROJECT_DIR$/storage/StorageSave.h" />
+        <option value="$PROJECT_DIR$/storage/Storage.h" />
+        <option value="$PROJECT_DIR$/storage/Storage.cpp" />
       </list>
     </option>
   </component>
@@ -175,7 +179,7 @@
     <detection-done>true</detection-done>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="395" />
+    <option name="x" value="27" />
     <option name="y" value="23" />
     <option name="width" value="854" />
     <option name="height" value="686" />
@@ -347,11 +351,17 @@
       <option name="project" value="LOCAL" />
       <updated>1449929751057</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Ensure StorageSave can save data into text file">
+      <created>1449929784471</created>
+      <option name="number" value="00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1449929784471</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="395" y="23" width="854" height="686" extended-state="0" />
+    <frame x="27" y="23" width="854" height="686" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24941452" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -381,10 +391,13 @@
     <MESSAGE value="Added component files" />
     <MESSAGE value="Added Account object to represent data" />
     <MESSAGE value="Ensure StorageLoad can retrieve data from text file" />
-    <option name="LAST_COMMIT_MESSAGE" value="Ensure StorageLoad can retrieve data from text file" />
+    <MESSAGE value="Ensure StorageSave can save data into text file" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ensure StorageSave can save data into text file" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <option name="time" value="1" />
+    </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
@@ -445,22 +458,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/parser/command/Command.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/storage/Storage.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/storage/Storage.h">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -530,11 +527,29 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/storage/StorageLoad.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.46875">
+        <state vertical-scroll-proportion="0.0">
           <caret line="12" column="19" selection-start-line="12" selection-start-column="19" selection-end-line="12" selection-end-column="19" />
           <folding>
             <element signature="e#42#60#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/storage/Storage.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <folding>
+            <element signature="e#42#59#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/storage/Storage.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3515625">
+          <caret line="9" column="1" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
+          <folding />
         </state>
       </provider>
     </entry>
