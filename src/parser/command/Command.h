@@ -5,7 +5,6 @@
 #ifndef SPENDTRACKER_COMMAND_H
 #define SPENDTRACKER_COMMAND_H
 
-
 class Command {
     private:
         string type;
