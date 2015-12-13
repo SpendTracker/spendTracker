@@ -3,6 +3,8 @@
 //
 
 #include "Logic.h"
+#include <iostream>
+using namespace std;
 
 Logic::Logic() {
 
@@ -10,4 +12,8 @@ Logic::Logic() {
 
 Logic::~Logic() {
 
+}
+
+void Logic::executeCommand(string input) {
+    cout << "Hello" << endl;
 }
