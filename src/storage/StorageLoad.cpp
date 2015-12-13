@@ -32,16 +32,16 @@ std::map<std::string, Account> StorageLoad::execute() {
     for(Json::Value::iterator it = trackJson.begin(); it != trackJson.end(); ++it) {
 
         std::map<Account::Category, int> expense;
-        expense[Account::CLOTHES] = (*it)["expense_category"]["clothes"].asInt();
-        expense[Account::ENTERTAINMENT] = (*it)["expense_category"]["entertainment"].asInt();
-        expense[Account::FOOD] = (*it)["expense_category"]["food"].asInt();
-        expense[Account::HEALTH] = (*it)["expense_category"]["health"].asInt();
-        expense[Account::FOOD] = (*it)["expense_category"]["health"].asInt();
+        expense[Account::CLOTHES] = (*it)[Account::ACCOUNT_EXPENSE_CATEGORY][Account::EXPENSE_CLOTHES].asInt();
+        expense[Account::ENTERTAINMENT] = (*it)[Account::ACCOUNT_EXPENSE_CATEGORY][Account::EXPENSE_ENTERTAINMENT].asInt();
+        expense[Account::FOOD] = (*it)[Account::ACCOUNT_EXPENSE_CATEGORY][Account::EXPENSE_FOOD].asInt();
+        expense[Account::HEALTH] = (*it)[Account::ACCOUNT_EXPENSE_CATEGORY][Account::EXPENSE_HEALTH].asInt();
+        expense[Account::TRANSPORT] = (*it)[Account::ACCOUNT_EXPENSE_CATEGORY][Account::EXPENSE_TRANSPORT].asInt();
 
-        Account account = Account((*it)["date"].asString(),
-                                  (*it)["balance"].asInt(),
-                                  (*it)["income"].asInt(),
-                                  (*it)["expense"].asInt(),
+        Account account = Account((*it)[Account::ACCOUNT_DATE].asString(),
+                                  (*it)[Account::ACCOUNT_BALANCE].asInt(),
+                                  (*it)[Account::ACCOUNT_INCOME].asInt(),
+                                  (*it)[Account::ACCOUNT_EXPENSE].asInt(),
                                   expense);
         allData[(*it)["date"].asString()] = account;
     }

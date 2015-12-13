@@ -12,10 +12,21 @@
 class Account {
 
 public:
-
     enum Category {
         CLOTHES, ENTERTAINMENT, FOOD, HEALTH, TRANSPORT
     };
+
+    static const std::string ACCOUNT_DATE;
+    static const std::string ACCOUNT_BALANCE;
+    static const std::string ACCOUNT_INCOME;
+    static const std::string ACCOUNT_EXPENSE;
+    static const std::string ACCOUNT_EXPENSE_CATEGORY;
+
+    static const std::string EXPENSE_CLOTHES;
+    static const std::string EXPENSE_ENTERTAINMENT;
+    static const std::string EXPENSE_FOOD;
+    static const std::string EXPENSE_HEALTH;
+    static const std::string EXPENSE_TRANSPORT;
 
     Account();
     Account(std::string date, int balance, int income, int expense,

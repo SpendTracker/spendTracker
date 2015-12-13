@@ -7,6 +7,18 @@
 #include <json.h>
 #include "Account.h"
 
+const std::string Account::ACCOUNT_DATE = "date";
+const std::string Account::ACCOUNT_BALANCE = "balance";
+const std::string Account::ACCOUNT_INCOME = "income";
+const std::string Account::ACCOUNT_EXPENSE = "expense";
+const std::string Account::ACCOUNT_EXPENSE_CATEGORY = "expense_category";
+
+const std::string Account::EXPENSE_CLOTHES = "clothes";
+const std::string Account::EXPENSE_ENTERTAINMENT = "clothes";
+const std::string Account::EXPENSE_FOOD = "food";
+const std::string Account::EXPENSE_HEALTH = "health";
+const std::string Account::EXPENSE_TRANSPORT = "transport";
+
 Account::Account() {
     balance_ = 0;
     income_ = 0;
@@ -75,11 +87,11 @@ Json::Value Account::toJson(std::string key) {
     Json::Value root;
     Json::Value account = root[key];
 
-    account["date"] = date_;
-    account["balance"] = balance_;
-    account["income"] = income_;
-    account["expense"] = expense_;
-    account["expense_category"] = getExpenseJson();
+    account[ACCOUNT_DATE] = date_;
+    account[ACCOUNT_BALANCE] = balance_;
+    account[ACCOUNT_INCOME] = income_;
+    account[ACCOUNT_EXPENSE] = expense_;
+    account[ACCOUNT_EXPENSE_CATEGORY] = getExpenseJson();
 
     return account;
 }
@@ -88,11 +100,11 @@ Json::Value Account::getExpenseJson() {
 
     Json::Value expense;
 
-    expense["clothes"] = expense_category_[CLOTHES];
-    expense["entertainment"] = expense_category_[ENTERTAINMENT];
-    expense["food"] = expense_category_[FOOD];
-    expense["health"] = expense_category_[HEALTH];
-    expense["transport"] = expense_category_[TRANSPORT];
+    expense[EXPENSE_CLOTHES] = expense_category_[CLOTHES];
+    expense[EXPENSE_ENTERTAINMENT] = expense_category_[ENTERTAINMENT];
+    expense[EXPENSE_FOOD] = expense_category_[FOOD];
+    expense[EXPENSE_HEALTH] = expense_category_[HEALTH];
+    expense[EXPENSE_TRANSPORT] = expense_category_[TRANSPORT];
 
     return expense;
 }
