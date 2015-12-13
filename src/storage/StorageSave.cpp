@@ -7,7 +7,9 @@
 #include "StorageSave.h"
 #include "account/Account.h"
 
-const std::string DEFAULT_FILENAME = "SpendTrackerData.txt";
+const std::string DEFAULT_FILENAME = "test.txt";
+const std::string SUCCESS_MESSAGE_SAVE_DATA = "Successfully saved data.";
+const std::string ERROR_MESSAGE_OPEN_FILE = "Unable to open file.";
 
 StorageSave::StorageSave() {
     // TODO Auto-generated constructor stub
@@ -18,25 +20,25 @@ StorageSave::~StorageSave() {
     // TODO Auto-generated destructor stub
 }
 
-void StorageSave::writefile(std::ofstream &file, std::string textData) {
-    file << textData;
-    file.close();
-}
+std::string StorageSave::execute(std::map<std::string, Account> allData) {
 
-std::string StorageSave::execute(std::vector<Account> allData) {
+    std::string message;
+    std::ofstream out(DEFAULT_FILENAME, std::ofstream::out | std::ofstream::trunc);
+    Json::Value trackJson(Json::objectValue);
 
-    std::ofstream file;
-    std::ofstream *fileptr = &file;
-
-    file.open(DEFAULT_FILENAME, std::ios_base::app);
-
-    if(!file.is_open()) {
-        std::cout << "Unable to open file." << std::endl;
+    if(!out.is_open()) {
+        message = ERROR_MESSAGE_OPEN_FILE;
     } else {
-        std::cout << "Saving contents to file." << std::endl;
-        std::string textData;
-        writefile(*fileptr, textData);
-    }
+        for (std::map<std::string, Account>::iterator
+                     it = allData.begin(); it != allData.end(); ++it) {
+            trackJson[it->first] = it->second.toJson(it->first);
+        }
 
-    return "";
+        out << trackJson;
+        message = SUCCESS_MESSAGE_SAVE_DATA;
+    }
+    std::cout << trackJson.toStyledString() << std::endl;
+    out.close();
+
+    return message;
 }

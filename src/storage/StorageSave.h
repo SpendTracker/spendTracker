@@ -16,11 +16,7 @@ public:
     StorageSave();
     virtual ~StorageSave();
 
-    std::string execute(std::vector<Account> allData);
-
-private:
-    void writefile(std::ofstream &file, std::string textData);
+    std::string execute(std::map<std::string, Account> allData);
 };
-
 
 #endif //SPENDTRACKER_STORAGESAVE_H
