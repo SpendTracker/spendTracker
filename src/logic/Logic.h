@@ -3,15 +3,22 @@
 //
 
 #include <string>
+#include "../parser/command/Command.h"
+#include "../parser/Parser.h"
+
 #ifndef SPENDTRACKER_LOGIC_H
 #define SPENDTRACKER_LOGIC_H
 using namespace std;
 
 class Logic {
+    private:
+        Parser parser;
     public:
         Logic();
         virtual ~Logic();
-        void executeCommand(string input);
+
+        Command createCommand(string input);
+        void executeCommand(Command command);
 };
 
 
