@@ -29,7 +29,7 @@ void Logic::executeCommand(Command command) {
     else if(strcmp(command.getType().c_str(),"earn") == 0) {
 
     }
-    else if(strcmp(command.getType().c_str(),"earn") == 0) {
+    else if(strcmp(command.getType().c_str(),"exit") == 0) {
 
     }
     else {
