@@ -7,7 +7,7 @@
 #include "StorageSave.h"
 #include "account/Account.h"
 
-const std::string DEFAULT_FILENAME = "test.txt";
+const std::string DEFAULT_FILENAME = "SpendTrackerData.txt";
 const std::string SUCCESS_MESSAGE_SAVE_DATA = "Successfully saved data.";
 const std::string ERROR_MESSAGE_OPEN_FILE = "Unable to open file.";
 

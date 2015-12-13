@@ -9,7 +9,7 @@
 #include "StorageLoad.h"
 #include "account/Account.h"
 
-const std::string DEFAULT_FILENAME = "test.txt";
+const std::string DEFAULT_FILENAME = "SpendTrackerData.txt";
 
 StorageLoad::StorageLoad() {
     // TODO Auto-generated constructor stub
