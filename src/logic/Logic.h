@@ -7,6 +7,9 @@
 
 
 class Logic {
+    public:
+        Logic();
+        virtual ~Logic();
 
 };
 
