@@ -15,10 +15,7 @@ public:
     StorageLoad();
     virtual ~StorageLoad();
 
-    std::vector<Account> execute(std::vector<Account> allData);
-
-private:
-    std::string readfile(std::ifstream &file);
+    std::map<std::string, Account> execute();
 };
 
 

@@ -4,6 +4,8 @@
 
 #include <iostream>
 #include <fstream>
+#include <map>
+#include <json.h>
 #include "StorageLoad.h"
 #include "account/Account.h"
 
@@ -19,37 +21,32 @@ StorageLoad::~StorageLoad() {
 
 }
 
-std::string StorageLoad::readfile(std::ifstream &file) {
+std::map<std::string, Account> StorageLoad::execute() {
 
-    std::string line;
-    std::string textData;
+    std::ifstream in(DEFAULT_FILENAME);
+    std::map<std::string, Account> allData;
+    Json::Value trackJson;
 
-    while(file.good()) {
-        getline(file, line);
-        textData += line;
-        textData.push_back('\n');
+    in >> trackJson;
+
+    for(Json::Value::iterator it = trackJson.begin(); it != trackJson.end(); ++it) {
+
+        std::map<Account::Category, int> expense;
+        expense[Account::CLOTHES] = (*it)[Account::ACCOUNT_EXPENSE_CATEGORY][Account::EXPENSE_CLOTHES].asInt();
+        expense[Account::ENTERTAINMENT] = (*it)[Account::ACCOUNT_EXPENSE_CATEGORY][Account::EXPENSE_ENTERTAINMENT].asInt();
+        expense[Account::FOOD] = (*it)[Account::ACCOUNT_EXPENSE_CATEGORY][Account::EXPENSE_FOOD].asInt();
+        expense[Account::HEALTH] = (*it)[Account::ACCOUNT_EXPENSE_CATEGORY][Account::EXPENSE_HEALTH].asInt();
+        expense[Account::TRANSPORT] = (*it)[Account::ACCOUNT_EXPENSE_CATEGORY][Account::EXPENSE_TRANSPORT].asInt();
+
+        Account account = Account((*it)[Account::ACCOUNT_DATE].asString(),
+                                  (*it)[Account::ACCOUNT_BALANCE].asInt(),
+                                  (*it)[Account::ACCOUNT_INCOME].asInt(),
+                                  (*it)[Account::ACCOUNT_EXPENSE].asInt(),
+                                  expense);
+        allData[(*it)["date"].asString()] = account;
     }
 
-    file.close();
+    in.close();
 
-    return textData;
-}
-
-std::vector<Account> StorageLoad::execute(std::vector<Account> allData) {
-
-    std::ifstream file;
-    std::ifstream *fileptr = &file;
-    std::string textData;
-
-    if(std::ifstream(DEFAULT_FILENAME)) {
-        std::cout << "File exist." << std::endl;
-        file.open(DEFAULT_FILENAME, std::ios_base::app);
-    } else {
-        std::cout << "File created." << std::endl;
-    }
-
-    textData = readfile(*fileptr);
-
-    std::vector<Account> lol;
-    return lol;
+    return allData;
 }

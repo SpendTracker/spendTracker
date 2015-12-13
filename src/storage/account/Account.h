@@ -2,44 +2,59 @@
 // Created by Bao Jun on 12/12/15.
 //
 
-#include <map>
+#include <unordered_map>
 #include <string>
+#include <json.h>
 
 #ifndef SPENDTRACKER_ACCOUNT_H
 #define SPENDTRACKER_ACCOUNT_H
 
-
 class Account {
+
 public:
     enum Category {
         CLOTHES, ENTERTAINMENT, FOOD, HEALTH, TRANSPORT
     };
 
+    static const std::string ACCOUNT_DATE;
+    static const std::string ACCOUNT_BALANCE;
+    static const std::string ACCOUNT_INCOME;
+    static const std::string ACCOUNT_EXPENSE;
+    static const std::string ACCOUNT_EXPENSE_CATEGORY;
+
+    static const std::string EXPENSE_CLOTHES;
+    static const std::string EXPENSE_ENTERTAINMENT;
+    static const std::string EXPENSE_FOOD;
+    static const std::string EXPENSE_HEALTH;
+    static const std::string EXPENSE_TRANSPORT;
+
     Account();
-    Account(int id, int balance, int income,
-            std::map<Account::Category, int> expense, std::string date);
+    Account(std::string date, int balance, int income, int expense,
+            std::map<Category, int> expense_category);
     virtual ~Account();
 
-    const int& id() const;
+    const std::string& date() const;
     const int& balance() const;
     const int& income() const;
-    const std::map<Account::Category, int>& expense() const;
-    const std::string& date() const;
+    const int& expense() const;
+    const std::map<Category, int>& expense_category() const;
 
-    void id(const int& id);
+    void date(const std::string& date);
     void balance(const int& balance);
     void income(const int& income);
-    void expense(const std::map<Account::Category, int>& expense);
-    void date(const std::string& date);
+    void expense(const int& expense);
+    void expense_category(const std::map<Category, int>& expense_category);
 
-    void toJson();
+    Json::Value toJson(std::string key);
 
 private:
-    int id_;
     int balance_;
     int income_;
-    std::map<Account::Category, int> expense_;
+    int expense_;
+    std::map<Category, int> expense_category_;
     std::string date_;
+
+    Json::Value getExpenseJson();
 };
 
 #endif //SPENDTRACKER_ACCOUNT_H
