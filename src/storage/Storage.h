@@ -15,8 +15,8 @@ public:
     Storage();
     virtual ~Storage();
 
-    std::vector<Account> load();
-    void save(std::vector<Account> allData);
+    std::map<std::string, Account> load();
+    std::string save(std::map<std::string, Account> allData);
 
 private:
     StorageLoad storageLoad;

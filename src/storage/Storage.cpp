@@ -13,11 +13,10 @@ Storage::~Storage() {
     // TODO Auto-generated destructor stub
 }
 
-std::vector<Account> Storage::load() {
-    std::vector<Account> lol;
-    return storageLoad.execute(lol);
+std::map<std::string, Account> Storage::load() {
+    return storageLoad.execute();
 }
 
-void Storage::save(std::vector<Account> allData) {
-    storageSave.execute(allData);
+std::string Storage::save(std::map<std::string, Account> allData) {
+    return storageSave.execute(allData);
 }
