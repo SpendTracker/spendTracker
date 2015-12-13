@@ -2,34 +2,36 @@
 // Created by Bao Jun on 12/12/15.
 //
 
+#include <map>
 #include <cassert>
+#include <json.h>
 #include "Account.h"
 
 Account::Account() {
-    id_ = 0;
     balance_ = 0;
     income_ = 0;
 }
 
-Account::Account(int id, int balance, int income,
-                 std::map<Account::Category, int> expense, std::string date) {
+Account::Account(std::string date, int balance, int income, int expense,
+                 std::map<Account::Category, int> expense_category) {
 
-    assert(id >= 0);
     assert(income >= 0);
+    assert(expense >= 0);
+    assert(!date.empty());
 
-    id_ = id;
+    date_ = date;
     balance_ = balance;
     income_ = income;
     expense_ = expense;
-    date_ = date;
+    expense_category_ = expense_category;
 }
 
 Account::~Account() {
 
 }
 
-const int& Account::id() const {
-    return id_;
+const std::string& Account::date() const {
+    return date_;
 }
 
 const int& Account::balance() const {
@@ -40,16 +42,16 @@ const int& Account::income() const {
     return income_;
 }
 
-const std::map<Account::Category, int>& Account::expense() const {
+const int& Account::expense() const {
     return expense_;
 }
 
-const std::string& Account::date() const {
-    return date_;
+void Account::date(const std::string& date) {
+    date_ = date;
 }
 
-void Account::id(const int& id) {
-    id_ = id;
+const std::map<Account::Category, int>& Account::expense_category() const {
+    return expense_category_;
 }
 
 void Account::balance(const int& balance) {
@@ -60,14 +62,37 @@ void Account::income(const int& income) {
     income_ = income;
 }
 
-void Account::expense(const std::map<Account::Category, int>& expense) {
+void Account::expense(const int& expense) {
     expense_ = expense;
 }
 
-void Account::date(const std::string& date) {
-    date_ = date;
+void Account::expense_category(const std::map<Account::Category, int>& expense_category) {
+    expense_category_ = expense_category;
 }
 
-void Account::toJson() {
+Json::Value Account::toJson(std::string key) {
 
+    Json::Value root;
+    Json::Value account = root[key];
+
+    account["date"] = date_;
+    account["balance"] = balance_;
+    account["income"] = income_;
+    account["expense"] = expense_;
+    account["expense_category"] = getExpenseJson();
+
+    return account;
+}
+
+Json::Value Account::getExpenseJson() {
+
+    Json::Value expense;
+
+    expense["clothes"] = expense_category_[CLOTHES];
+    expense["entertainment"] = expense_category_[ENTERTAINMENT];
+    expense["food"] = expense_category_[FOOD];
+    expense["health"] = expense_category_[HEALTH];
+    expense["transport"] = expense_category_[TRANSPORT];
+
+    return expense;
 }
